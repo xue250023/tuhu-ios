@@ -1,0 +1,433 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		4F94435D249A0396002F33BD /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F94435C249A0396002F33BD /* AppDelegate.swift */; };
+		4F944361249A0396002F33BD /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4F944360249A0396002F33BD /* ViewController.swift */; };
+		4F944364249A0396002F33BD /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F944362249A0396002F33BD /* Main.storyboard */; };
+		4F944366249A0397002F33BD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4F944365249A0397002F33BD /* Assets.xcassets */; };
+		4F944369249A0397002F33BD /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4F944367249A0397002F33BD /* LaunchScreen.storyboard */; };
+		8CDBFBBBC036A79239C8C5FB /* Pods_TuhuiOSLessonDemoApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5957579BE0BAACC5865E4380 /* Pods_TuhuiOSLessonDemoApp.framework */; };
+		CF629C1024B0564100C276C1 /* SlideController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF629C0D24B0564100C276C1 /* SlideController.swift */; };
+		CF629C1124B0564100C276C1 /* ImageHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF629C0E24B0564100C276C1 /* ImageHelper.swift */; };
+		CF629C1224B0564100C276C1 /* ImageVIewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = CF629C0F24B0564100C276C1 /* ImageVIewExtension.swift */; };
+		CFCF76C824AC694600900421 /* commen.swift in Sources */ = {isa = PBXBuildFile; fileRef = CFCF76C724AC694600900421 /* commen.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		4F944359249A0396002F33BD /* TuhuiOSLessonDemoApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TuhuiOSLessonDemoApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		4F94435C249A0396002F33BD /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		4F944360249A0396002F33BD /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4F944363249A0396002F33BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		4F944365249A0397002F33BD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		4F944368249A0397002F33BD /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		4F94436A249A0397002F33BD /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		56E8E1BCEC430EDF43178870 /* Pods-TuhuiOSLessonDemoApp.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TuhuiOSLessonDemoApp.debug.xcconfig"; path = "Target Support Files/Pods-TuhuiOSLessonDemoApp/Pods-TuhuiOSLessonDemoApp.debug.xcconfig"; sourceTree = "<group>"; };
+		5957579BE0BAACC5865E4380 /* Pods_TuhuiOSLessonDemoApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TuhuiOSLessonDemoApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C502A7CDDF5789643AB5CD27 /* Pods-TuhuiOSLessonDemoApp.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TuhuiOSLessonDemoApp.release.xcconfig"; path = "Target Support Files/Pods-TuhuiOSLessonDemoApp/Pods-TuhuiOSLessonDemoApp.release.xcconfig"; sourceTree = "<group>"; };
+		CF629C0D24B0564100C276C1 /* SlideController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SlideController.swift; path = "../../../Downloads/Car 3/Car/SlideController.swift"; sourceTree = "<group>"; };
+		CF629C0E24B0564100C276C1 /* ImageHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageHelper.swift; path = "../../../Downloads/Car 3/Car/ImageHelper.swift"; sourceTree = "<group>"; };
+		CF629C0F24B0564100C276C1 /* ImageVIewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ImageVIewExtension.swift; path = "../../../Downloads/Car 3/Car/ImageVIewExtension.swift"; sourceTree = "<group>"; };
+		CFCF76C724AC694600900421 /* commen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = commen.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		4F944356249A0396002F33BD /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8CDBFBBBC036A79239C8C5FB /* Pods_TuhuiOSLessonDemoApp.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		4F944350249A0396002F33BD = {
+			isa = PBXGroup;
+			children = (
+				4F94435B249A0396002F33BD /* TuhuiOSLessonDemoApp */,
+				4F94435A249A0396002F33BD /* Products */,
+				BE99283A8E922668F203EF85 /* Pods */,
+				DD87A9BB130D736AE3501498 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		4F94435A249A0396002F33BD /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				4F944359249A0396002F33BD /* TuhuiOSLessonDemoApp.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		4F94435B249A0396002F33BD /* TuhuiOSLessonDemoApp */ = {
+			isa = PBXGroup;
+			children = (
+				CFCF76C924AC696E00900421 /* 宏文件 */,
+				4F94435C249A0396002F33BD /* AppDelegate.swift */,
+				4F944360249A0396002F33BD /* ViewController.swift */,
+				4F944362249A0396002F33BD /* Main.storyboard */,
+				CF629C0E24B0564100C276C1 /* ImageHelper.swift */,
+				CF629C0F24B0564100C276C1 /* ImageVIewExtension.swift */,
+				CF629C0D24B0564100C276C1 /* SlideController.swift */,
+				4F944365249A0397002F33BD /* Assets.xcassets */,
+				4F944367249A0397002F33BD /* LaunchScreen.storyboard */,
+				4F94436A249A0397002F33BD /* Info.plist */,
+			);
+			path = TuhuiOSLessonDemoApp;
+			sourceTree = "<group>";
+		};
+		BE99283A8E922668F203EF85 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				56E8E1BCEC430EDF43178870 /* Pods-TuhuiOSLessonDemoApp.debug.xcconfig */,
+				C502A7CDDF5789643AB5CD27 /* Pods-TuhuiOSLessonDemoApp.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		CFCF76C924AC696E00900421 /* 宏文件 */ = {
+			isa = PBXGroup;
+			children = (
+				CFCF76C724AC694600900421 /* commen.swift */,
+			);
+			path = "宏文件";
+			sourceTree = "<group>";
+		};
+		DD87A9BB130D736AE3501498 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5957579BE0BAACC5865E4380 /* Pods_TuhuiOSLessonDemoApp.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		4F944358249A0396002F33BD /* TuhuiOSLessonDemoApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4F94436D249A0397002F33BD /* Build configuration list for PBXNativeTarget "TuhuiOSLessonDemoApp" */;
+			buildPhases = (
+				3C1B012B70C8F5CFB6E4F7D7 /* [CP] Check Pods Manifest.lock */,
+				4F944355249A0396002F33BD /* Sources */,
+				4F944356249A0396002F33BD /* Frameworks */,
+				4F944357249A0396002F33BD /* Resources */,
+				BA1CC5B23D2D750C39207016 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TuhuiOSLessonDemoApp;
+			productName = TuhuiOSLessonDemoApp;
+			productReference = 4F944359249A0396002F33BD /* TuhuiOSLessonDemoApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		4F944351249A0396002F33BD /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1120;
+				LastUpgradeCheck = 1120;
+				ORGANIZATIONNAME = jameskuo;
+				TargetAttributes = {
+					4F944358249A0396002F33BD = {
+						CreatedOnToolsVersion = 11.2.1;
+					};
+				};
+			};
+			buildConfigurationList = 4F944354249A0396002F33BD /* Build configuration list for PBXProject "TuhuiOSLessonDemoApp" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 4F944350249A0396002F33BD;
+			productRefGroup = 4F94435A249A0396002F33BD /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				4F944358249A0396002F33BD /* TuhuiOSLessonDemoApp */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		4F944357249A0396002F33BD /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4F944369249A0397002F33BD /* LaunchScreen.storyboard in Resources */,
+				4F944366249A0397002F33BD /* Assets.xcassets in Resources */,
+				4F944364249A0396002F33BD /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		3C1B012B70C8F5CFB6E4F7D7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-TuhuiOSLessonDemoApp-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BA1CC5B23D2D750C39207016 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TuhuiOSLessonDemoApp/Pods-TuhuiOSLessonDemoApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-TuhuiOSLessonDemoApp/Pods-TuhuiOSLessonDemoApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-TuhuiOSLessonDemoApp/Pods-TuhuiOSLessonDemoApp-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		4F944355249A0396002F33BD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CF629C1224B0564100C276C1 /* ImageVIewExtension.swift in Sources */,
+				4F944361249A0396002F33BD /* ViewController.swift in Sources */,
+				CF629C1124B0564100C276C1 /* ImageHelper.swift in Sources */,
+				CF629C1024B0564100C276C1 /* SlideController.swift in Sources */,
+				4F94435D249A0396002F33BD /* AppDelegate.swift in Sources */,
+				CFCF76C824AC694600900421 /* commen.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		4F944362249A0396002F33BD /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4F944363249A0396002F33BD /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		4F944367249A0397002F33BD /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				4F944368249A0397002F33BD /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		4F94436B249A0397002F33BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		4F94436C249A0397002F33BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		4F94436E249A0397002F33BD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 56E8E1BCEC430EDF43178870 /* Pods-TuhuiOSLessonDemoApp.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 857SMZQ3R8;
+				INFOPLIST_FILE = TuhuiOSLessonDemoApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = jameskuo.TuhuiOSLessonDemoApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		4F94436F249A0397002F33BD /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C502A7CDDF5789643AB5CD27 /* Pods-TuhuiOSLessonDemoApp.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 857SMZQ3R8;
+				INFOPLIST_FILE = TuhuiOSLessonDemoApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = jameskuo.TuhuiOSLessonDemoApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4F944354249A0396002F33BD /* Build configuration list for PBXProject "TuhuiOSLessonDemoApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F94436B249A0397002F33BD /* Debug */,
+				4F94436C249A0397002F33BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		4F94436D249A0397002F33BD /* Build configuration list for PBXNativeTarget "TuhuiOSLessonDemoApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4F94436E249A0397002F33BD /* Debug */,
+				4F94436F249A0397002F33BD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 4F944351249A0396002F33BD /* Project object */;
+}
