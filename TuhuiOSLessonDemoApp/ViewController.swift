@@ -19,6 +19,7 @@ class ViewController: UIViewController {
     var timeStamp3: Int?
     var timeStamp4: Int?
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var bottombar: UIView!
     @IBOutlet weak var popview: UIView!
 
         override func viewDidLoad() {
@@ -26,7 +27,7 @@ class ViewController: UIViewController {
         //MARK: set Datasource
         self.tableView.dataSource = self
         self.tableView.delegate = self
-        popview.isHidden = true
+       popview.isHidden = true
             
         let now1 = NSDate()
         let timeInterval1:TimeInterval = now1.timeIntervalSince1970
@@ -54,7 +55,6 @@ class ViewController: UIViewController {
           let data = JSON.init(response.data)
           self.goodsInfo = data
           let coms = self.goodsInfo? ["Comments"]
-          //let images=data["Product"]["Image"]["ImageUrls"]
           //let imagesStrArr: [String] = images.arrayValue.map({ $0.stringValue })
         let parameters: [String: String] = [
                 "url": "test1",
@@ -84,9 +84,6 @@ class ViewController: UIViewController {
                     .responseJSON { test in
                   //  print(test)
                 }
-            
-            
-            
         }
     }
     
@@ -109,6 +106,9 @@ class ViewController: UIViewController {
     }
     @IBAction func popView(_ sender: UIButton) {
         popview.isHidden = false
+        tableView.isUserInteractionEnabled=true;
+        bottombar.isUserInteractionEnabled=true;
+        popview.isUserInteractionEnabled=false
         let parameters: [String: String] = [
                 "elementId": "productInfo_shopping_cart",
                 "th_app_id": "ios",
@@ -124,10 +124,21 @@ class ViewController: UIViewController {
     }
     @IBAction func closePopView(_ sender: UIButton) {
         popview.isHidden = true
+ 
     }
-      override func didReceiveMemoryWarning() {
-          super.didReceiveMemoryWarning()
-      }
+    
+    @IBAction func add(_ sender: UIButton) {
+          popview.isHidden = true
+
+    }
+    @IBAction func close(_ sender: UIButton) {
+  popview.isHidden = true
+
+    }
+    
+    
+    
+    
 }
 
 //MARK: Datasource
@@ -151,6 +162,7 @@ extension ViewController:UITableViewDataSource{
             //identifer="spaceCell"
         case 4:
             identifer="SubtitleCell"
+           // identifer="spaceCell"
         case 5:
             identifer="DiscountCell"
         case 6:
@@ -170,6 +182,24 @@ extension ViewController:UITableViewDataSource{
         
         if let imagecell : ImageCell=cell as? ImageCell{
             //设置图片
+//            let images=data["Product"]["Image"]["ImageUrls"][0]
+//            print(images)
+//            imagecell.headimage
+            let
+            userimage=goodsInfo?["Product"]["Image"]["ImageUrls"][0].stringValue
+            let url : URL = try! URL.init(string: userimage ??  "https://img1.tuhu.org/UserHead/7da1/0e0e/24e0981f04e48e239248e278_w390_h390.png@100w_100h_100Q.png") as! URL
+             let data : NSData! = NSData(contentsOf: url as URL)
+             if(data != nil)
+             {
+                    imagecell.headimage.image =  UIImage.init(data: data as Data, scale: 1)
+             }else{
+
+                   imagecell.headimage.image = UIImage.init(named: "") // 否则就赋值默认图片
+                 
+             }
+            
+            
+            
         }else if let priceCell:PriceCell=cell as? PriceCell{
             //最好前面再加点东西
             priceCell.nowPriceLabel.text = goodsInfo?["Product"]["Price"].stringValue;
@@ -193,11 +223,19 @@ extension ViewController:UITableViewDataSource{
 //            commentHeadCell.keywords4.layer.cornerRadius = 13
 //            commentHeadCell.keywords5.layer.cornerRadius = 13
 //            commentHeadCell.keywords6.layer.cornerRadius = 13
+            [commentHeadCell.keyworks1.layoutIfNeeded];//iOS 10需要添加这个
+           commentHeadCell.keyworks1.layer.cornerRadius = 13
+           commentHeadCell.keyworks1.clipsToBounds = true;
+             
+            
             
             
         }else if let commentCell:CommentCell=cell as?CommentCell
         {
             let images=comments?["Comments"][indexPath.item-9]["CommentImages"].arrayValue.map({$0.stringValue})
+            let
+               userimage=comments?["Comments"][indexPath.item-9]
+
             let url : URL = try! URL.init(string: images?[0] ??  "https://img1.tuhu.org/UserHead/7da1/0e0e/24e0981f04e48e239248e278_w390_h390.png@100w_100h_100Q.png") as! URL
             let data : NSData! = NSData(contentsOf: url as URL)
             if(data != nil)
@@ -205,7 +243,7 @@ extension ViewController:UITableViewDataSource{
                    commentCell.commentimg1.image =  UIImage.init(data: data as Data, scale: 1)
             }else{
 
-           commentCell.commentimg1.image = UIImage.init(named: "") // 否则就赋值默认图片
+                  commentCell.commentimg1.image = UIImage.init(named: "") // 否则就赋值默认图片
                 
             }
             let url1 : URL = try! URL.init(string: images?[0] ?? "https://img1.tuhu.org/UserHead/7da1/0e0e/24e0981f04e48e239248e278_w390_h390.png@100w_100h_100Q.png")!
@@ -220,11 +258,12 @@ extension ViewController:UITableViewDataSource{
 
                   commentCell.commenting2.image = UIImage.init(named: "") // 否则就赋值默认图片
              }
-            let url2 : URL = try! URL.init(string: images?[0] ?? "https://img1.tuhu.org/UserHead/7da1/0e0e/24e0981f04e48e239248e278_w390_h390.png@100w_100h_100Q.png")!
-             let data2 : NSData! = NSData(contentsOf: url1 as URL)
+            let url2 : URL = try! URL.init(string: userimage?["HeadImage"].stringValue ?? "https://img1.tuhu.org/UserHead/7da1/0e0e/24e0981f04e48e239248e278_w390_h390.png@100w_100h_100Q.png")!
+             let data2 : NSData! = NSData(contentsOf: url2 as URL)
              if(data != nil)
              {
                 //头像
+                
                   commentCell.portrait.image =  UIImage.init(data: data2 as Data, scale: 1)
              }else{
 
@@ -272,7 +311,7 @@ extension ViewController: UITableViewDelegate {
         case 4:
             return 81
         case 5:
-            return 169
+            return 155
         case 6:
             return 63
         case 7:
@@ -290,6 +329,9 @@ extension ViewController: UITableViewDelegate {
 
 /// Cell subclass
 class ImageCell: UITableViewCell {
+    
+    @IBOutlet weak var headimage: UIImageView!
+    
     
 }
 
