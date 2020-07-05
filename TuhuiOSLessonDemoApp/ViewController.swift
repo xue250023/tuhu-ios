@@ -12,36 +12,115 @@ import Alamofire
 import  SwiftyJSON
 class ViewController: UIViewController {
 
-
+    var timeStamp1 : Int?
     var comments: JSON?
     var goodsInfo: JSON?
+    var timeStamp2: Int?
+    var timeStamp3: Int?
+    var timeStamp4: Int?
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var popview: UIView!
+
         override func viewDidLoad() {
         super.viewDidLoad()
         //MARK: set Datasource
         self.tableView.dataSource = self
         self.tableView.delegate = self
         popview.isHidden = true
+            
+        let now1 = NSDate()
+        let timeInterval1:TimeInterval = now1.timeIntervalSince1970
+
+        self.timeStamp2 = Int(timeInterval1)
+            print(" timeStamp2-timeStamp1")
+            print(timeStamp2)
+            print(timeStamp1)
+            print(timeStamp2! - timeStamp1!)
+            print(" timeStamp2-timeStamp1")
+        let parameters: [String: String] = [
+                "url": "test1",
+                "th_app_id": "ios",
+                "duration":"100"
+            ]
+            AF.request("https://geylnu.com/tuhu/pageloadDuration", method: .post, parameters: parameters, encoder: JSONParameterEncoder.default)
+                .responseJSON { test in
+              //  print(test)
+            }
+            
+            
+            
        AF.request("https://api.tuhu.cn/Product/GetProductDetail?activityId=&pid=OL-MO-ONE-5W40-1%7C").response { response in
                
           let data = JSON.init(response.data)
           self.goodsInfo = data
           let coms = self.goodsInfo? ["Comments"]
-          let images=data["Product"]["Image"]["ImageUrls"]
+          //let images=data["Product"]["Image"]["ImageUrls"]
           //let imagesStrArr: [String] = images.arrayValue.map({ $0.stringValue })
-        self.tableView.reloadData()
+        let parameters: [String: String] = [
+                "url": "test1",
+                "th_app_id": "ios",
+                "duration":"100",
+                "httpCode":"200"
+            ]
+            AF.request("https://geylnu.com/tuhu/networkRequestMonitor", method: .post, parameters: parameters, encoder: JSONParameterEncoder.default)
+                .responseJSON { test in
+              //  print(test)
+            }
+          self.tableView.reloadData()
         
        }
         AF.request("https://api.tuhu.cn/Comment/SelectProductTopNComments?productId=OL-MO-ONE-5W40-1").response { response in
                 
             let data = JSON.init(response.data)
             self.comments = data;
-              self.tableView.reloadData()
+            self.tableView.reloadData()
+            let parameters: [String: String] = [
+                    "url": "test1",
+                    "th_app_id": "ios",
+                    "duration":"100",
+                    "httpCode":"200"
+                ]
+                AF.request("https://geylnu.com/tuhu/networkRequestMonitor", method: .post, parameters: parameters, encoder: JSONParameterEncoder.default)
+                    .responseJSON { test in
+                  //  print(test)
+                }
+            
+            
+            
+        }
+    }
+    
+    override func  loadView() {
+        super.loadView()
+        let parameters: [String: String] = [
+            "url": "test1",
+            "th_app_id": "ios",
+        ]
+        let now = NSDate()
+        let timeInterval:TimeInterval = now.timeIntervalSince1970
+        print("---timStamep1----")
+        self.timeStamp1 = Int(timeInterval)
+        print(self.timeStamp1)
+        print("---timStamep1----")
+        AF.request("https://geylnu.com/tuhu/pageview", method: .post, parameters: parameters, encoder: JSONParameterEncoder.default)
+            .responseJSON { test in
+          //  print(test)
         }
     }
     @IBAction func popView(_ sender: UIButton) {
         popview.isHidden = false
+        let parameters: [String: String] = [
+                "elementId": "productInfo_shopping_cart",
+                "th_app_id": "ios",
+                "productId":"AP-GP-CL",            ]
+        AF.request("https://geylnu.com/tuhu/clickElement", method: .post, parameters: parameters, encoder: JSONParameterEncoder.default)
+            .responseJSON { test in
+          //  print(test)
+        }
+        
+        
+        
+        
     }
     @IBAction func closePopView(_ sender: UIButton) {
         popview.isHidden = true
@@ -68,8 +147,8 @@ extension ViewController:UITableViewDataSource{
         case 2:
             identifer="TitleCell"
         case 3:
-            //identifer="IntroduceCell"
-            identifer="spaceCell"
+            identifer="IntroduceCell"
+            //identifer="spaceCell"
         case 4:
             identifer="SubtitleCell"
         case 5:
@@ -108,11 +187,8 @@ extension ViewController:UITableViewDataSource{
             //SlogenCell
         }else if let commentHeadCell:CommentHeadCell=cell as?CommentHeadCell {
             //设置CommentHeadCell
-           // keywords3
-            
-            
-            commentHeadCell.keyworks1.layer.cornerRadius = 13
-            commentHeadCell.keywords2.layer.cornerRadius = 13
+//            commentHeadCell.keyworks1.layer.cornerRadius = 13
+//            commentHeadCell.keywords2.layer.cornerRadius = 13
 //            commentHeadCell.keywords3.layer.cornerRadius = 13
 //            commentHeadCell.keywords4.layer.cornerRadius = 13
 //            commentHeadCell.keywords5.layer.cornerRadius = 13
@@ -121,8 +197,8 @@ extension ViewController:UITableViewDataSource{
             
         }else if let commentCell:CommentCell=cell as?CommentCell
         {
-            //print(comments?["Comments"][indexPath.item-9]["HeadImage"].stringValue)
-           let url : URL = try! URL.init(string: "https://img1.tuhu.org/UserHead/7da1/0e0e/24e0981f04e48e239248e278_w390_h390.png@100w_100h_100Q.png") as! URL
+            let images=comments?["Comments"][indexPath.item-9]["CommentImages"].arrayValue.map({$0.stringValue})
+            let url : URL = try! URL.init(string: images?[0] ??  "https://img1.tuhu.org/UserHead/7da1/0e0e/24e0981f04e48e239248e278_w390_h390.png@100w_100h_100Q.png") as! URL
             let data : NSData! = NSData(contentsOf: url as URL)
             if(data != nil)
             {
@@ -130,8 +206,33 @@ extension ViewController:UITableViewDataSource{
             }else{
 
            commentCell.commentimg1.image = UIImage.init(named: "") // 否则就赋值默认图片
-
+                
             }
+            let url1 : URL = try! URL.init(string: images?[0] ?? "https://img1.tuhu.org/UserHead/7da1/0e0e/24e0981f04e48e239248e278_w390_h390.png@100w_100h_100Q.png")!
+             let data1 : NSData! = NSData(contentsOf: url1 as URL)
+             if(data != nil)
+             {
+                //diergetup
+                
+                commentCell.commenting2.isHidden=true
+                  commentCell.commenting2.image =  UIImage.init(data: data1 as Data, scale: 1)
+             }else{
+
+                  commentCell.commenting2.image = UIImage.init(named: "") // 否则就赋值默认图片
+             }
+            let url2 : URL = try! URL.init(string: images?[0] ?? "https://img1.tuhu.org/UserHead/7da1/0e0e/24e0981f04e48e239248e278_w390_h390.png@100w_100h_100Q.png")!
+             let data2 : NSData! = NSData(contentsOf: url1 as URL)
+             if(data != nil)
+             {
+                //头像
+                  commentCell.portrait.image =  UIImage.init(data: data2 as Data, scale: 1)
+             }else{
+
+                  commentCell.portrait.image = UIImage.init(named: "") // 否则就赋值默认图片
+                 
+             }
+            
+            
             commentCell.userName.text = comments?["Comments"][ indexPath.item - 9]["UserName"].stringValue
             commentCell.commentTime.text=comments?["Comments"][indexPath.item-9]["CommentTime"].rawString()
             commentCell.CarTypeDes.text=comments?["Comments"][indexPath.item-9]["CarTypeDes"].stringValue
@@ -238,7 +339,10 @@ class CommentCell : UITableViewCell{
     @IBOutlet weak var OrderTime: UILabel!
     @IBOutlet weak var commentcontent: UILabel!
     
+    @IBOutlet weak var portrait: UIImageView!
     @IBOutlet weak var commentimg1: UIImageView!
+    
+    @IBOutlet weak var commenting2: UIImageView!
 }
 class SpaceCell :UITableView{
     
